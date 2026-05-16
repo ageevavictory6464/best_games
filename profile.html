@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#"><img src="images/search.svg" alt="search"></a></li>
+                    <li><a href="login.html">Войти</a></li>
+                    <li><a href="profile.html">Личный кабинет</a></li>
+                    <li><a href="catalog.html">Каталог игр</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Блок 1: Информация о пользователе -->
+            <section class="user-info">
+                <h2>Информация о пользователе</h2>
+                <div class="info-content">
+                    <div class="info-item">
+                        <span class="label">E-mail:</span>
+                        <span class="value">user@example.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Фамилия:</span>
+                        <span class="value">Иванов</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Имя:</span>
+                        <span class="value">Иван</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Дата рождения:</span>
+                        <span class="value">15.03.1990</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Номер телефона:</span>
+                        <span class="value">+7 (999) 123-45-67</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Блок 2: История покупок -->
+            <section class="purchase-history">
+                <h2>История покупок</h2>
+                <div class="purchase-list">
+                    <div class="purchase-item">
+                        <div class="purchase-date">20.10.2023</div>
+                        <div class="purchase-name">The Last Adventure</div>
+                        <div class="purchase-price">1 499 ₽</div>
+                    </div>
+                    <div class="purchase-item">
+                        <div class="purchase-date">15.10.2023</div>
+                        <div class="purchase-name">Набор "Легендарное оружие"</div>
+                        <div class="purchase-price">299 ₽</div>
+                    </div>
+                    <div class="purchase-item">
+                        <div class="purchase-date">10.10.2023</div>
+                        <div class="purchase-name">Cyberpunk 2077</div>
+                        <div class="purchase-price">2 999 ₽</div>
+                    </div>
+                    <div class="purchase-item">
+                        <div class="purchase-date">05.10.2023</div>
+                        <div class="purchase-name">Игровая валюта (1000 монет)</div>
+                        <div class="purchase-price">499 ₽</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Блок 3: Настройки профиля -->
+            <section class="profile-settings">
+                <h2>Настройки профиля</h2>
+                <div class="settings-content">
+                    <div class="setting-item">
+                        <button class="change-password">Сменить пароль</button>
+                    </div>
+                    <div class="setting-item">
+                        <label for="theme-selector">Тема интерфейса:</label>
+                        <select id="theme-selector">
+                            <option value="light">Светлая</option>
+                            <option value="dark">Темная</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: 8-800-999-55-99</p>
+                    <p>Email: best@games.ru</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Информация</h3>
+                    <p><a href="#">Клиентам</a></p>
+                    <p><a href="#">Партнерам</a></p>
+                    <p><a href="#">О нас</a></p>
+                    <p><a href="#">Контакты</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <p><a href="index.html">Главная</a></p>
+                    <p><a href="register.html">Регистрация</a></p>
+                    <p><a href="login.html">Авторизация</a></p>
+                    <p><a href="profile.html">Личный кабинет</a></p>
+                    <p><a href="#search">Поиск</a></p>
+                </div>
+            </div>
+        </footer>
+        </main>
+    </div>
+</body>
+</html>

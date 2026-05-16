@@ -254,7 +254,7 @@ body {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -288,7 +288,7 @@ body {
 
 /* Стили для страниц авторизации */
 .auth-page {
-    max-width: 500px;
+    max-width: 40%;
     margin: 50px auto;
     padding: 40px;
     background: #111;
@@ -328,7 +328,7 @@ body {
     border-radius: 6px;
     color: #fff;
     font-size: 16px;
-    transition: border-color 0.3s;
+    width: 100%;
 }
 
 .form-group input:focus {
@@ -338,7 +338,7 @@ body {
 
 .form-row {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .form-row .form-group {
@@ -415,4 +415,117 @@ body {
 .login-link,
 .register-link {
     margin-top: 10px;
+}
+
+
+
+
+/* Блок 1: Информация о пользователе */
+.user-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.user-info h2 {
+    margin-bottom: 15px;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+}
+
+.info-item .label {
+    font-weight: bold;
+    width: 150px;
+}
+
+/* Блок 2: История покупок */
+.purchase-history {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.purchase-history h2 {
+    margin-bottom: 15px;
+}
+
+.purchase-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.purchase-item {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.purchase-item:last-child {
+    border-bottom: none;
+}
+
+.purchase-date {
+    width: 120px;
+}
+
+.purchase-name {
+    flex: 1;
+}
+
+.purchase-price {
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+    color: green;
+}
+
+/* Блок 3: Настройки профиля */
+.profile-settings {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.profile-settings h2 {
+    margin-bottom: 15px;
+}
+
+.setting-item {
+    margin-bottom: 15px;
+}
+
+.change-password {
+    padding: 10px 20px;
+    background: #5E63B6;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.change-password:hover {
+    background-color: #303957;
+}
+
+#theme-selector {
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+
+.popular-games .slider-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 }
