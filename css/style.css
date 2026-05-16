@@ -1,0 +1,286 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #333;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav li {
+    list-style: none;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav a:hover {
+    color: #ccc;
+}
+
+.nav img {
+    width: 24px;
+    height: 24px;
+}
+
+.main {
+    padding: 40px 0;
+}
+
+.news {
+    margin-bottom: 80px;
+}
+
+.news h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.game {
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.game img {
+    width: 100%;
+    height: 250px;
+    width: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.game h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.game p {
+    color: #888;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.game a {
+    color: #aaa;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+.game a:hover {
+    color: #fff;
+    border-color: #666;
+}
+
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.search form {
+    display: flex;
+    gap: 8px;
+}
+
+.search form input {
+    height: 40px;
+    border-radius: 8px;
+    padding: 4px 8px;
+    border: none;
+}
+
+.search form button {
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #5E63B6;
+    color: #fff;
+    padding: 8px 12px;
+}
+
+.search form button:hover {
+    background-color: #303957;
+}
+
+.zhanr ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.zhanr ul li {
+    list-style: none;
+    background-color: #333;
+    padding: 12px 12px;
+    border-radius: 8px;
+
+}
+
+.zhanr ul li:hover {
+    background-color: #8d8d8d;
+}
+
+.zhanr-item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.popular-games {
+    margin-top: 80px;
+    padding: 20px 0;
+}
+
+.popular-games h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.popular-games .slider {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.popular-games .game {
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.popular-games .game img {
+    height: 270px;
+    width: 200px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.popular-games .game h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.popular-games .game p {
+    color: #888;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.popular-games .game .price {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.popular-games .stars {
+    color: #FFD700 ;
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+.popular-games .game a {
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.popular-games .game a:hover {
+    background-color: #666;
+}
+
+
+.footer {
+    background: #111;
+    margin-top: 80px;
+    padding: 50px 0 20px;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-section p {
+    color: #888;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-section a {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
