@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление игры - Админка</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- шапка сайта -->
+        <header class="header">
+            <div class="logo">
+                <a href="./index.html"><img src="./images/logo.png" alt="logo"></a>
+            </div>
+            <!-- навигация -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="#"><img src="./images/search.svg" alt="search"></a></li>
+                    <li><a href="./login.html">Войти</a></li>
+                    <li><a href="./profile.html">Личный кабинет</a></li>
+                    <li><a href="./catalog.html">Каталог игр</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- форма добавления новой игры -->
+        <div class="form-container">
+            <h1 class="form-title">Добавить новую игру</h1>
+            
+            <form id="addGameForm">
+                <!-- Название игры -->
+                <div class="form-group">
+                    <label class="form-label">Название игры</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                
+                <!-- Жанр -->
+                <div class="form-group">
+                    <label class="form-label">Жанр</label>
+                    <select class="form-input" required>
+                        <option value="">Выберите жанр</option>
+                        <option value="action">Экшен</option>
+                        <option value="strategy">Стратегия</option>
+                        <option value="adventure">Приключения</option>
+                    </select>
+                </div>
+                
+                <!-- Изображение -->
+                <div class="form-group">
+                    <label class="form-label">Изображение</label>
+                    <input type="file" class="image-input" accept="image/*" required>
+                </div>
+                
+                <!-- Компания-разработчик -->
+                <div class="form-group">
+                    <label class="form-label">Компания-разработчик</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                
+                <!-- Описание -->
+                <div class="form-group">
+                    <label class="form-label">Описание</label>
+                    <textarea class="form-input" required></textarea>
+                </div>
+                
+                <!-- Стоимость -->
+                <div class="form-group">
+                    <label class="form-label">Стоимость</label>
+                    <input type="number" class="form-input" min="0" step="0.01" required>
+                </div>
+                
+                <!-- Кнопка Добавить -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+        <!-- подвал сайта -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: 8-800-999-55-99</p>
+                    <p>Email: best@games.ru</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Информация</h3>
+                    <p><a href="#">Клиентам</a></p>
+                    <p><a href="#">Партнерам</a></p>
+                    <p><a href="#">О нас</a></p>
+                    <p><a href="#">Контакты</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <p><a href="./index.html">Главная</a></p>
+                    <p><a href="./register.html">Регистрация</a></p>
+                    <p><a href="./login.html">Авторизация</a></p>
+                    <p><a href="./profile.html">Личный кабинет</a></p>
+                    <p><a href="#search">Поиск</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
