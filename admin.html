@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Добавление игры - Админка</title>
+    <script>
+        (function() {
+            const t = localStorage.getItem('user-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="./js/theme.js"></script>
 </head>
 <body>
     <div class="container">
         <!-- шапка сайта -->
         <header class="header">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
             </div>
             <!-- навигация -->
             <nav class="nav">

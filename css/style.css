@@ -1,3 +1,29 @@
+/*Тёмная тема*/
+:root {
+    --bg-body: #000;
+    --bg-surface: #111;
+    --bg-input: #222;
+    --bg-tag: var(--border-main);
+    --bg-tag-hover: var(--accent);
+    --text-main: #fff;
+    --text-muted: #888;
+    --text-link: var(--text-main);
+    --text-link-hover: #ccc;
+    --text-on-accent: #fff;
+    --text-on-accent-hover: #e2e2e2;
+    --accent: #5e63b6;
+    --accent-hover: #303957;
+    --border-main: #333;
+    --border-input: #444;
+    --border-input-focus: #666;
+    --border-light: #ddd;
+    --border-divider: #eee;
+    --dot-bg: rgba(255, 255, 255, 0.5);
+    --dot-active: #fff;
+    --price-color: #008000;
+    --star-color: #ffd700;
+}
+
 /* Общие стили */
 * {
     padding: 0;
@@ -6,9 +32,10 @@
 }
 
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--bg-body);
+    color: var(--text-main);
     font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -23,12 +50,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-main);
+    transition: border-color 0.3s ease;
 }
 
 .logo img {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
 }
 
 .nav ul {
@@ -42,13 +70,14 @@ body {
 }
 
 .nav a {
-    color: #fff;
+    color: var(--text-link);
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 .nav a:hover {
-    color: #ccc;
+    color: var(--text-link-hover);
 }
 
 .nav img {
@@ -76,14 +105,16 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
     gap: 60px;
 }
 
 .game {
-    background: #111;
+    background: var(--bg-surface);
     padding: 15px;
     border-radius: 8px;
     text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .slider .game.active {
@@ -110,24 +141,47 @@ body {
 }
 
 .game p {
-    color: #888;
+    color: var(--text-muted);
     margin-bottom: 15px;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 .game a {
-    color: #fff;
+    color: var(--text-link);
     text-decoration: none;
     display: inline-block;
     padding: 8px 20px;
-    border: 1px solid #5E63B6;
+    border: 1px solid var(--accent);
     border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .game a:hover {
-    color: #fff;
-    border-color: #303957;
-    background-color: #5E63B6;
+    color: var(--text-link);
+    border-color: var(--accent-hover);
+    background-color: var(--accent-hover);
+}
+
+.slider-dots {
+    display: flex;
+    position: absolute;
+    gap: 8px;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--dot-bg);
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: var(--dot-active);
 }
 
 /* поиск по жанрам */
@@ -148,19 +202,24 @@ body {
     border-radius: 8px;
     padding: 4px 8px;
     border: none;
+    background-color: var(--bg-input);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .search form button {
     height: 40px;
     border-radius: 8px;
     border: none;
-    background-color: #5E63B6;
-    color: #fff;
+    background-color: var(--accent);
+    color: var(--text-on-accent);
     padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .search form button:hover {
-    background-color: #303957;
+    background-color: var(--accent-hover);
 }
 
 .zhanr ul {
@@ -171,21 +230,20 @@ body {
 
 .zhanr ul li {
     list-style: none;
-    background-color: #333;
+    background-color: var(--accent);
     padding: 12px 12px;
     border-radius: 8px;
-
+    transition: background-color 0.3s ease;
 }
 
 .zhanr ul li:hover {
-    background-color: #5E63B6;
+    background-color: var(--bg-tag-hover);
 }
 
 .zhanr-item a {
     text-decoration: none;
-    color: #fff;
+    color: var(--text-on-accent);
 }
-
 
 /* инфографика о преимуществах маркетплейса */
 .infographika {
@@ -238,31 +296,31 @@ body {
 }
 
 .popular-games .game p {
-    color: #888;
+    color: var(--text-muted);
     margin-bottom: 8px;
     font-size: 16px;
 }
 
 .popular-games .game .price {
-    color: #fff;
+    color: var(--text-main);
     font-size: 20px;
     font-weight: bold;
     margin: 10px 0px;
 }
 
 .popular-games .stars {
-    color: #FFD700;
+    color: var(--star-color);
     font-size: 20px;
     margin: 10px 0px;
 }
 
-
 /* футер сайта */
 .footer {
-    background: #111;
+    background: var(--bg-surface);
     margin-top: 80px;
     padding: 50px 0 20px;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-main);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-content {
@@ -281,40 +339,43 @@ body {
 .footer-section h3 {
     font-size: 22px;
     margin-bottom: 20px;
-    color: #fff;
+    color: var(--text-main);
+    transition: color 0.3s ease;
 }
 
 .footer-section p {
-    color: #888;
+    color: var(--text-muted);
     margin-bottom: 10px;
     font-size: 16px;
+    transition: color 0.3s ease;
 }
 
 .footer-section a {
-    color: #888;
+    color: var(--text-muted);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: #fff;
+    color: var(--text-main);
 }
-
 
 /* Стили для страниц авторизации и регистрации */
 .auth-page {
     max-width: 40%;
     margin: 50px auto;
     padding: 40px;
-    background: #111;
+    background: var(--bg-surface);
     border-radius: 12px;
-    border: 1px solid #333;
+    border: 1px solid var(--border-main);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .auth-page h1 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 32px;
-    color: #fff;
+    color: var(--text-main);
 }
 
 .auth-form {
@@ -330,24 +391,25 @@ body {
 }
 
 .form-group label {
-    color: #fff;
+    color: var(--text-main);
     font-size: 16px;
     font-weight: 500;
 }
 
 .form-group input {
     padding: 12px 15px;
-    background: #222;
-    border: 1px solid #444;
+    background: var(--bg-input);
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: #fff;
+    color: var(--text-main);
     font-size: 16px;
     width: 100%;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #666;
+    border-color: var(--border-input-focus);
 }
 
 .form-row {
@@ -373,18 +435,18 @@ body {
 }
 
 .form-checkbox label {
-    color: #888;
+    color: var(--text-muted);
     font-size: 14px;
     cursor: pointer;
 }
 
 .form-checkbox label a {
-    color: #888;
+    color: var(--text-muted);
     text-decoration: underline;
 }
 
 .form-checkbox label a:hover {
-    color: #fff;
+    color: var(--text-main);
 }
 
 .btn {
@@ -394,17 +456,17 @@ body {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
-    background: #5E63B6;
-    color: #fff;
+    background: var(--accent);
+    color: var(--text-on-accent);
     margin-top: 10px;
 }
 
 .btn-primary:hover {
-    background: #303957;
+    background: var(--accent-hover);
 }
 
 .form-links {
@@ -416,14 +478,14 @@ body {
 }
 
 .form-links a {
-    color: #888;
+    color: var(--text-muted);
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .form-links a:hover {
-    color: #fff;
+    color: var(--text-main);
 }
 
 .login-link,
@@ -432,16 +494,17 @@ body {
 }
 
 /* Личный кабинет */
-/* Блок 1: Информация о пользователе */
 .user-info {
     margin-bottom: 30px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     border-radius: 5px;
+    transition: border-color 0.3s ease;
 }
 
 .user-info h2 {
     margin-bottom: 15px;
+    color: var(--text-main);
 }
 
 .info-content {
@@ -457,18 +520,20 @@ body {
 .info-item .label {
     font-weight: bold;
     width: 150px;
+    color: var(--text-main);
 }
 
-/* Блок 2: История покупок */
 .purchase-history {
     margin-bottom: 30px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     border-radius: 5px;
+    transition: border-color 0.3s ease;
 }
 
 .purchase-history h2 {
     margin-bottom: 15px;
+    color: var(--text-main);
 }
 
 .purchase-list {
@@ -480,7 +545,8 @@ body {
 .purchase-item {
     display: flex;
     padding: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-divider);
+    transition: border-color 0.3s ease;
 }
 
 .purchase-item:last-child {
@@ -489,28 +555,31 @@ body {
 
 .purchase-date {
     width: 120px;
+    color: var(--text-muted);
 }
 
 .purchase-name {
     flex: 1;
+    color: var(--text-main);
 }
 
 .purchase-price {
     width: 100px;
     text-align: right;
     font-weight: bold;
-    color: green;
+    color: var(--price-color);
 }
 
-/* Блок 3: Настройки профиля */
 .profile-settings {
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     border-radius: 5px;
+    transition: border-color 0.3s ease;
 }
 
 .profile-settings h2 {
     margin-bottom: 15px;
+    color: var(--text-main);
 }
 
 .setting-item {
@@ -519,29 +588,32 @@ body {
 
 .change-password {
     padding: 10px 20px;
-    background: #5E63B6;
-    color: rgb(226, 226, 226);
+    background: var(--accent);
+    color: var(--text-on-accent-hover);
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .change-password:hover {
-    background-color: #303957;
+    background-color: var(--accent-hover);
 }
 
 #theme-selector {
     padding: 5px 10px;
     margin-left: 10px;
+    background-color: var(--bg-input);
+    color: var(--text-main);
+    border: 1px solid var(--border-input);
+    border-radius: 4px;
 }
-
 
 .popular-games .slider-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
-
 
 /* админ-панель */
 .form-container {
@@ -552,6 +624,7 @@ body {
 .form-title {
     font-size: 24px;
     margin-bottom: 30px;
+    color: var(--text-main);
 }
 
 .form-group {
@@ -561,17 +634,18 @@ body {
 .form-label {
     display: block;
     margin-bottom: 5px;
-    color: #fff;
+    color: var(--text-main);
 }
 
 .form-input {
     width: 100%;
     padding: 10px;
-    background-color: #222;
-    border: 1px solid #444;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-input);
     border-radius: 4px;
-    color: #fff;
+    color: var(--text-main);
     font-size: 14px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 textarea.form-input {
@@ -581,9 +655,9 @@ textarea.form-input {
 
 .image-input {
     padding: 8px;
-    background-color: #222;
-    color: #fff;
-    border: 1px solid #444;
+    background-color: var(--bg-input);
+    color: var(--text-main);
+    border: 1px solid var(--border-input);
     border-radius: 4px;
 }
 
@@ -592,76 +666,82 @@ textarea.form-input {
     margin-top: 30px;
 }
 
+/*Темы*/
 
-
-/* для светлой темы */
-body.light {
-    background-color: #ffffff;
-    color: #333333;
+/* Светлая тема */
+:root[data-theme="light"] {
+    --bg-body: #f8f9fa;
+    --bg-surface: #fff;
+    --bg-input: #fff;
+    --bg-tag: var(--accent);
+    --bg-tag-hover: var(--accent-hover);
+    --text-main: #333;
+    --text-muted: #666;
+    --text-link: var(--accent);
+    --text-link-hover: var(--accent-hover);
+    --text-on-accent: #fff;
+    --text-on-accent-hover: #fff;
+    --accent: #5e63b6;
+    --accent-hover: #303957;
+    --border-main: #e0e0e0;
+    --border-input: #a3a3a3;
+    --border-input-focus: var(--accent);
+    --border-light: #e0e0e0;
+    --border-divider: #e0e0e0;
+    --dot-bg: rgba(0, 0, 0, 0.2);
+    --dot-active: var(--accent-hover);
+    --price-color: #008000;
+    --star-color: #ffb300;
 }
 
-/* Ссылки */
-.light a {
-    color: #5E63B6;
+/* Чёрная тема */
+:root[data-theme="black"] {
+    --bg-body: #000;
+    --bg-surface: #0a0a0a;
+    --bg-input: #0a0a0a;
+    --bg-tag: #1a1a1a;
+    --bg-tag-hover: #888;
+    --text-main: #fff;
+    --text-muted: #aaa;
+    --text-link: #fff;
+    --text-link-hover: #ccc;
+    --text-on-accent: #000;
+    --text-on-accent-hover: #000;
+    --accent: #fff;
+    --accent-hover: #ccc;
+    --border-main: #222;
+    --border-input: #333;
+    --border-input-focus: #fff;
+    --border-light: #222;
+    --border-divider: #1a1a1a;
+    --dot-bg: rgba(255, 255, 255, 0.3);
+    --dot-active: #fff;
+    --price-color: #fff;
+    --star-color: #fff;
 }
 
-.light a:hover {
-    color: #303957;
-}
-
-/* Конкретные элементы */
-.light .game {
-    background-color: #f1f1f1;
-    border: 1px solid #a3a3a3;
-}
-
-.light .game:hover {
-    border-color: #5E63B6;
-    box-shadow: 0 4px 12px rgba(94, 99, 182, 0.1);
-}
-
-.light .game .price {
-    color: #000;
-}
-
-/* поиск по жанрам */
-.light .search form input {
-    background-color: #cacaca;
-    border: 1px solid #a3a3a3;
-}
-
-.light .search form input::placeholder {
-    color: #727272;
-}
-
-.light .search .zhanr-item{
-    background-color: #5E63B6;
-}
-
-.light .search .zhanr-item a{
-    color: #fff;
-}
-
-.light .search .zhanr-item:hover{
-    background-color: #303957;
-}
-
-/* Футер */
-
-.light .footer {
-    background-color: #cfcfcf;
-    border-top: 1px solid #e0e0e0;
-    color: #666666;
-}
-
-.light .footer-section h3 {
-    color: #000;
-}
-
-.light .footer-section p a {
-    color: #666666;
-}
-
-.light .footer-section p a:hover {
-    color: #5E63B6;
+/* Белая тема */
+:root[data-theme="white"] {
+    --bg-body: #fff;
+    --bg-surface: #f5f5f5;
+    --bg-input: #f0f0f0;
+    --bg-tag: #111;
+    --bg-tag-hover: #555;
+    --text-main: #111;
+    --text-muted: #555;
+    --text-link: #111;
+    --text-link-hover: #555;
+    --text-on-accent: #fff;
+    --text-on-accent-hover: #fff;
+    --accent: #111;
+    --accent-hover: #333;
+    --border-main: #e0e0e0;
+    --border-input: #ccc;
+    --border-input-focus: #111;
+    --border-light: #e0e0e0;
+    --border-divider: #e0e0e0;
+    --dot-bg: rgba(0, 0, 0, 0.2);
+    --dot-active: #111;
+    --price-color: #000;
+    --star-color: #111;
 }

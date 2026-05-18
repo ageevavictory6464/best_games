@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Личный кабинет</title>
+    <script>
+        (function() {
+            const t = localStorage.getItem('user-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="./js/theme.js"></script>
 </head>
+
 <body>
     <div class="container">
         <!-- шапка сайта -->
         <header class="header">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
             </div>
             <!-- Навигация -->
             <nav class="nav">
@@ -87,42 +96,45 @@
                         <button class="change-password">Сменить пароль</button>
                     </div>
                     <div class="setting-item">
-                        <label for="theme-selector">Тема интерфейса:</label>
-                        <select id="theme-selector">
+                        <label for="theme-select">Тема интерфейса:</label>
+                        <select id="theme-select">
+                            <option value="dark" selected>Тёмная</option>
                             <option value="light">Светлая</option>
-                            <option value="dark">Темная</option>
+                            <option value="black">Чёрная</option>
+                            <option value="white">Белая</option>
                         </select>
                     </div>
                 </div>
             </section>
             <!-- подвал сайта -->
             <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Контакты</h3>
-                    <p>Телефон: 8-800-999-55-99</p>
-                    <p>Email: best@games.ru</p>
-                </div>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Контакты</h3>
+                        <p>Телефон: 8-800-999-55-99</p>
+                        <p>Email: best@games.ru</p>
+                    </div>
 
-                <div class="footer-section">
-                    <h3>Информация</h3>
-                    <p><a href="#">Клиентам</a></p>
-                    <p><a href="#">Партнерам</a></p>
-                    <p><a href="#">О нас</a></p>
-                    <p><a href="#">Контакты</a></p>
-                </div>
+                    <div class="footer-section">
+                        <h3>Информация</h3>
+                        <p><a href="#">Клиентам</a></p>
+                        <p><a href="#">Партнерам</a></p>
+                        <p><a href="#">О нас</a></p>
+                        <p><a href="#">Контакты</a></p>
+                    </div>
 
-                <div class="footer-section">
-                    <h3>Навигация</h3>
-                    <p><a href="index.html">Главная</a></p>
-                    <p><a href="register.html">Регистрация</a></p>
-                    <p><a href="login.html">Авторизация</a></p>
-                    <p><a href="profile.html">Личный кабинет</a></p>
-                    <p><a href="#search">Поиск</a></p>
+                    <div class="footer-section">
+                        <h3>Навигация</h3>
+                        <p><a href="index.html">Главная</a></p>
+                        <p><a href="register.html">Регистрация</a></p>
+                        <p><a href="login.html">Авторизация</a></p>
+                        <p><a href="profile.html">Личный кабинет</a></p>
+                        <p><a href="#search">Поиск</a></p>
+                    </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
         </main>
     </div>
 </body>
+
 </html>
