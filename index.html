@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BestGames</title>
     <script>
-        (function() {
+        (function () {
             const t = localStorage.getItem('user-theme') || 'dark';
             document.documentElement.setAttribute('data-theme', t);
         })();
     </script>
     <link rel="stylesheet" href="css/style.css">
     <script src="./js/theme.js"></script>
+    <script src="./js/slider.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
             <!-- Навигация -->
             <nav class="nav">
                 <ul>
-                    <li><a href="#"><img src="images/search.svg" alt="search"></a></li>
+                    <li><a href="#"><img class="icon-search" src="images/search.svg" alt="search"></a></li>
                     <li><a href="login.html">Войти</a></li>
                     <li><a href="profile.html">Личный кабинет</a></li>
                     <li><a href="catalog.html">Каталог игр</a></li>
@@ -38,36 +39,82 @@
             <section class="news">
                 <h1>Новинки</h1>
                 <div class="slider">
-                    <div class="arrow">
-                        <a href="#"><img src="images/left.png" alt="left arrow"></a>
+                    <div class="arrow prev">
+                        <a href="#"><img class="icon-arrow-left" src="images/left.png" alt="left arrow"></a>
                     </div>
-                    <div class="game">
-                        <img src="images/game1.jpeg" alt="GTA 5">
-                        <h3>GTA 5</h3>
-                        <p>Стоимость</p>
-                        <a href="#">Подробнее</a>
+                    <div class="slides-container">
+                        <div class="slide active">
+                            <div class="game">
+                                <img src="images/game1.jpeg" alt="GTA 5">
+                                <h3>GTA 5</h3>
+                                <p>239₽</p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                            <div class="game active">
+                                <img src="images/game2.jpg" alt="Resident evil 3">
+                                <h3>Resident evil 3</h3>
+                                <p>369₽ </p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                            <div class="game">
+                                <img src="images/game3.jpeg" alt="Fortnite">
+                                <h3>Fortnite</h3>
+                                <p>FREE</p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <div class="game">
+                                <img src="images/game4.jpg" alt="Cyberpunk 2077">
+                                <h3>Cyberpunk 2077</h3>
+                                <p>1299₽</p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                            <div class="game active">
+                                <img src="images/game5.jpg" alt="The Witcher 3">
+                                <h3>The Witcher 3</h3>
+                                <p>799₽</p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                            <div class="game">
+                                <img src="images/game6.jpg" alt="Red Dead 2">
+                                <h3>Red Dead 2</h3>
+                                <p>1499₽</p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <div class="game">
+                                <img src="images/game7.png" alt="Minecraft">
+                                <h3>Minecraft</h3>
+                                <p>599₽</p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                            <div class="game active">
+                                <img src="images/game8.jpg" alt="Elden Ring">
+                                <h3>Elden Ring</h3>
+                                <p>2499₽</p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                            <div class="game">
+                                <img src="images/game4.jpg" alt="Cyberpunk 2077">
+                                <h3>Cyberpunk 2077</h3>
+                                <p>1299₽</p>
+                                <a href="#">Подробнее</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="game active">
-                        <img src="images/game2.jpg" alt="Resident evil 3">
-                        <h3>Resident evil 3</h3>
-                        <p>Стоимость</p>
-                        <a href="#">Подробнее</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/game3.jpeg" alt="Fortnite">
-                        <h3>Fortnite</h3>
-                        <p>Стоимость</p>
-                        <a href="#">Подробнее</a>
-                    </div>
-                    <div class="arrow">
-                        <a href="#"><img src="images/right.png" alt="right arrow"></a>
+                    <div class="arrow next">
+                        <a href="#"><img class="icon-arrow-right" src="images/right.png" alt="right arrow"></a>
                     </div>
                     <div class="slider-dots">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                         <span class="dot"></span>
                     </div>
-                </div>
+
 
             </section>
             <!-- блок "поиск по жанрам" -->
@@ -111,53 +158,63 @@
             </section>
             <!-- блок "Популярные игры" -->
             <section class="popular-games">
-                <h1>Популярные игры</h1>
+                <h2>Популярные игры</h2>
                 <div class="slider">
-                    <div class="game">
+                    <a href="./catalog.html" class="game">
                         <img src="images/popular-game5.jpg" alt="game">
                         <h3>Cyberpunk 2077</h3>
                         <p>Экшн, Приключения</p>
                         <p>CD Projekt Red</p>
                         <div class="stars">★★★★☆</div>
-                        <p class="price">2000p</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
+                        <p class="price">2000₽</p>
+                        <button class="catalog-btn">В каталог</button>
+                    </a>
+                    <a href="./catalog.html" class="game">
                         <img src="images/popular-game2.jpg" alt="game">
                         <h3>League of Legends</h3>
                         <p>Стратегии</p>
                         <p>Larian Studios</p>
                         <div class="stars">★★★★☆</div>
-                        <p class="price">3699р</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
+                        <p class="price">3699₽</p>
+                        <button class="catalog-btn">В каталог</button>
+                    </a>
+                    <a href="./catalog.html" class="game">
                         <img src="images/popular-game1.jpg" alt="game">
                         <h3>Couner-Strike 2</h3>
                         <p>Шутеры</p>
                         <p>Valve</p>
                         <div class="stars">★★★★☆</div>
                         <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
+                        <button class="catalog-btn">В каталог</button>
+                    </a>
+                    <a href="./catalog.html" class="game">
                         <img src="images/popular-game4.jpg" alt="game">
                         <h3>Dota 2</h3>
                         <p>Стратегии</p>
                         <p>Valve</p>
                         <div class="stars">★★★★☆</div>
                         <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
+                        <button class="catalog-btn">В каталог</button>
+                    </a>
+                    <a href="./catalog.html" class="game">
                         <img src="images/popular-game3.jpg " alt="game">
                         <h3>VALORANT</h3>
                         <p>Шутеры</p>
                         <p>Riot Games</p>
                         <div class="stars">★★★★☆</div>
                         <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
+                        <button class="catalog-btn">В каталог</button>
+                    </a>
+                </div>
+            </section>
+
+            <section class="companies">
+                <h2>Наши партнеры</h2>
+                <div class="company">
+                    <img src="images/company1.png" alt="steam">
+                    <img src="images/company2.png" alt="xbox">
+                    <img src="images/company3.png" alt="riot games">
+                    <img src="images/company4.png" alt="epic games">
                 </div>
             </section>
         </main>
