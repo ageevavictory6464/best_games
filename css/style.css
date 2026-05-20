@@ -59,28 +59,41 @@ body {
     height: 90px;
 }
 
-.nav ul {
+.nav {
+    position: relative;
+}
+
+.menu {
     display: flex;
     gap: 40px;
     align-items: center;
 }
 
-.nav li {
+.menu li {
     list-style: none;
 }
 
-.nav a {
+.menu a {
     color: var(--text-link);
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
 }
 
-.nav a:hover {
+.menu a:hover {
     color: var(--text-link-hover);
 }
 
-.nav img {
+.menu img {
+    width: 24px;
+    height: 24px;
+}
+
+.m-menu {
+    display: none;
+}
+
+.m-menu img {
     width: 24px;
     height: 24px;
 }
@@ -332,12 +345,11 @@ a.game {
 
 /* популярные игры */
 .popular-games {
-    margin-top: 80px;
-    padding: 20px 0;
+    margin-bottom: 80px;
 }
 
-.popular-games h1 {
-    font-size: 36px;
+.popular-games h2 {
+    font-size: 24px;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -368,9 +380,98 @@ a.game {
     margin: 10px 0px;
 }
 
+.popular-games .slider-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.catalog-btn {
+    color: var(--text-link);
+    background-color: transparent;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.game:hover .catalog-btn {
+    color: var(--text-link);
+    border-color: var(--accent-hover);
+    background-color: var(--accent-hover);
+}
+
+
+/* чо-то для фильтрации в каталоге*/
+.container > input[type="radio"] {
+    display: none;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+.ganre-filter, .country-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 4px;
+    background: var(--bg-secondary, #2a2a2a);
+    color: var(--text-primary, #e0e0e0);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+    user-select: none;
+    border: 1px solid var(--border-color, #444);
+}
+.filter-btn:hover {
+    background: var(--bg-hover, #3a3a3a);
+}
+
+#genre-all:checked ~ .filters label[for="genre-all"],
+#genre-shooter:checked ~ .filters label[for="genre-shooter"],
+#genre-strategy:checked ~ .filters label[for="genre-strategy"],
+#genre-action:checked ~ .filters label[for="genre-action"],
+#genre-adventure:checked ~ .filters label[for="genre-adventure"],
+#genre-horror:checked ~ .filters label[for="genre-horror"],
+#genre-racing:checked ~ .filters label[for="genre-racing"],
+#country-all:checked ~ .filters label[for="country-all"],
+#country-usa:checked ~ .filters label[for="country-usa"],
+#country-poland:checked ~ .filters label[for="country-poland"] {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+#genre-shooter:checked ~ .popular-games .game:not([data-genre~="shooter"]),
+#genre-strategy:checked ~ .popular-games .game:not([data-genre~="strategy"]),
+#genre-action:checked ~ .popular-games .game:not([data-genre~="action"]),
+#genre-adventure:checked ~ .popular-games .game:not([data-genre~="adventure"]),
+#genre-horror:checked ~ .popular-games .game:not([data-genre~="horror"]),
+#genre-racing:checked ~ .popular-games .game:not([data-genre~="racing"]) {
+    display: none;
+}
+
+#country-usa:checked ~ .popular-games .game:not([data-country="usa"]),
+#country-poland:checked ~ .popular-games .game:not([data-country="poland"]) {
+    display: none;
+}
+
 /* наши партнёры */
 .companies {
-    margin: 80px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -443,7 +544,7 @@ a.game {
     color: var(--text-main);
 }
 
-/* Стили для страниц авторизации и регистрации */
+/* авторизация и регистрация */
 .auth-page {
     max-width: 40%;
     margin: 50px auto;
@@ -576,6 +677,33 @@ a.game {
     margin-top: 10px;
 }
 
+.password-trebovania {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    margin-top: 6px;
+    padding: 8px 10px;
+    background: var(--bg-input);
+    border-radius: 4px;
+}
+
+.req-item.valid {
+    color: #00ff6a;
+}
+
+.req-item.invalid {
+    color: #ff0000;
+}
+
+.match-message {
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+.match-message.success { color: #27ae60; }
+.match-message.error { color: #e74c3c; }
+
 /* Личный кабинет */
 .user-info {
     margin-bottom: 30px;
@@ -606,7 +734,7 @@ a.game {
     color: var(--text-main);
 }
 
-.purchase-history {
+.pokupki-history {
     margin-bottom: 30px;
     padding: 20px;
     border: 1px solid var(--border-light);
@@ -614,39 +742,39 @@ a.game {
     transition: border-color 0.3s ease;
 }
 
-.purchase-history h2 {
+.pokupki-history h2 {
     margin-bottom: 15px;
     color: var(--text-main);
 }
 
-.purchase-list {
+.pokupki-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.purchase-item {
+.pokupki-item {
     display: flex;
     padding: 10px;
     border-bottom: 1px solid var(--border-divider);
     transition: border-color 0.3s ease;
 }
 
-.purchase-item:last-child {
+.pokupki-item:last-child {
     border-bottom: none;
 }
 
-.purchase-date {
+.pokupki-date {
     width: 120px;
     color: var(--text-muted);
 }
 
-.purchase-name {
+.pokupki-name {
     flex: 1;
     color: var(--text-main);
 }
 
-.purchase-price {
+.pokupki-price {
     width: 100px;
     text-align: right;
     font-weight: bold;
@@ -690,12 +818,6 @@ a.game {
     color: var(--text-main);
     border: 1px solid var(--border-input);
     border-radius: 4px;
-}
-
-.popular-games .slider-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
 }
 
 /* админ-панель */
@@ -827,4 +949,44 @@ textarea.form-input {
     --dot-active: #111;
     --price-color: #000;
     --star-color: #111;
+}
+
+
+@media (max-width:768px) {
+    .container {
+        max-width: 560px;
+    }
+    .menu {
+        position: absolute;
+        left: -140px;
+        top: 20px;
+        padding: 20px;
+        margin-left: 20px;
+        gap: 10px;
+        flex-direction: column;
+        background-color: var(--accent);
+        border-radius: 10px;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: opacity 0.5s, transform 0.5s;
+    }
+    .menu-item a {
+        color: var(--border-main);
+    }
+    .m-menu {
+        display: block;
+        background-color: transparent;
+        border: none;
+        width: 120px;
+        height: 40px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
 }

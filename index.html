@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="./js/theme.js"></script>
     <script src="./js/slider.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
+
 </head>
 
 <body>
@@ -25,11 +27,22 @@
             </div>
             <!-- Навигация -->
             <nav class="nav">
-                <ul>
-                    <li><a href="#"><img class="icon-search" src="images/search.svg" alt="search"></a></li>
-                    <li><a href="login.html">Войти</a></li>
-                    <li><a href="profile.html">Личный кабинет</a></li>
-                    <li><a href="catalog.html">Каталог игр</a></li>
+                <button class="m-menu">
+                    <img class="burger-menu" src="/images/mobile-menu.png" alt="mobile menu">
+                </button>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="#search"><img class="icon-search" src="images/search.svg" alt="search"></a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="login.html">Войти</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="profile.html">Личный кабинет</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="catalog.html">Каталог игр</a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -118,7 +131,7 @@
 
             </section>
             <!-- блок "поиск по жанрам" -->
-            <section class="search">
+            <section class="search" id="search">
                 <form action="#">
                     <input type="text" placeholder="Поиск по жанрам">
                     <button type="submit">Отправить</button>
@@ -211,10 +224,10 @@
             <section class="companies">
                 <h2>Наши партнеры</h2>
                 <div class="company">
-                    <img src="images/company1.png" alt="steam">
-                    <img src="images/company2.png" alt="xbox">
-                    <img src="images/company3.png" alt="riot games">
-                    <img src="images/company4.png" alt="epic games">
+                    <img class="icon-company1" src="images/company1.png" alt="steam">
+                    <img class="icon-company2" src="images/company2.png" alt="xbox">
+                    <img class="icon-company3" src="images/company3.png" alt="riot games">
+                    <img class="icon-company4" src="images/company4.png" alt="epic games">
                 </div>
             </section>
         </main>
@@ -240,7 +253,7 @@
                     <p><a href="register.html">Регистрация</a></p>
                     <p><a href="login.html">Авторизация</a></p>
                     <p><a href="profile.html">Личный кабинет</a></p>
-                    <p><a href="#">Поиск</a></p>
+                    <p><a href="#search">Поиск</a></p>
                 </div>
             </div>
         </footer>

@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация - BestGames</title>
     <script>
-        (function() {
+        (function () {
             const t = localStorage.getItem('user-theme') || 'dark';
             document.documentElement.setAttribute('data-theme', t);
         })();
     </script>
     <link rel="stylesheet" href="css/style.css">
-    <script src="./theme.js"></script>
+    <script src="./js/theme.js"></script>
+    <script src="./js/validation.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
 </head>
 
 <body>
@@ -22,13 +24,24 @@
             <div class="logo">
                 <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
             </div>
-            <!-- навигация -->
+            <!-- Навигация -->
             <nav class="nav">
-                <ul>
-                    <li><a href="#"><img class="icon-search" src="images/search.svg" alt="search"></a></li>
-                    <li><a href="login.html">Войти</a></li>
-                    <li><a href="profile.html">Личный кабинет</a></li>
-                    <li><a href="catalog.html">Каталог игр</a></li>
+                <button class="m-menu">
+                    <img class="burger-menu" src="/images/mobile-menu.png" alt="mobile menu">
+                </button>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="#search"><img class="icon-search" src="images/search.svg" alt="search"></a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="login.html">Войти</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="profile.html">Личный кабинет</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="catalog.html">Каталог игр</a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -62,25 +75,33 @@
 
                     <div class="form-group">
                         <label for="phone">Номер телефона *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone" pattern="\+7\([0-9]{3}\)-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="password">Пароль *</label>
                             <input type="password" id="password" name="password" required>
+                            <div class="password-trebovania" id="password-reqs">
+                                <span class="req-item" data-req="length">Минимум 8 символов</span>
+                                <span class="req-item" data-req="upper">Заглавная буква</span>
+                                <span class="req-item" data-req="lower">Строчная буква</span>
+                                <span class="req-item" data-req="number">Цифра</span>
+                                <span class="req-item" data-req="special">Спецсимвол (!@#$%^&*)</span>
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="confirm-password">Повтор пароля *</label>
                             <input type="password" id="confirm-password" name="confirm-password" required>
+                            <span class="match-message" id="match-message"></span>
                         </div>
                     </div>
 
                     <div class="form-checkbox">
                         <input type="checkbox" id="agreement" name="agreement" required>
                         <label for="agreement">
-                            Согласен на обработку персональных данных *
+                            Я согласен на обработку <a href="privacy.html" target="_blank">персональных данных</a> *
                         </label>
                     </div>
 

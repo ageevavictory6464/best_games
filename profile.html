@@ -12,7 +12,8 @@
         })();
     </script>
     <link rel="stylesheet" href="css/style.css">
-    <script src="./theme.js"></script>
+    <script src="./js/theme.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
 </head>
 
 <body>
@@ -24,11 +25,22 @@
             </div>
             <!-- Навигация -->
             <nav class="nav">
-                <ul>
-                    <li><a href="#"><img class="icon-search" src="images/search.svg" alt="search"></a></li>
-                    <li><a href="login.html">Войти</a></li>
-                    <li><a href="profile.html">Личный кабинет</a></li>
-                    <li><a href="catalog.html">Каталог игр</a></li>
+                <button class="m-menu">
+                    <img class="burger-menu" src="/images/mobile-menu.png" alt="mobile menu">
+                </button>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="#search"><img class="icon-search" src="images/search.svg" alt="search"></a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="login.html">Войти</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="profile.html">Личный кабинет</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="catalog.html">Каталог игр</a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -62,30 +74,30 @@
             </section>
 
             <!-- Блок 2: История покупок -->
-            <section class="purchase-history">
+            <section class="pokupki-history">
                 <h2>История покупок</h2>
-                <div class="purchase-list">
-                    <div class="purchase-item">
-                        <div class="purchase-date">20.10.2023</div>
-                        <div class="purchase-name">The Last Adventure</div>
-                        <div class="purchase-price">1 499 ₽</div>
-                    </div>
-                    <div class="purchase-item">
-                        <div class="purchase-date">15.10.2023</div>
-                        <div class="purchase-name">Набор "Легендарное оружие"</div>
-                        <div class="purchase-price">299 ₽</div>
-                    </div>
-                    <div class="purchase-item">
-                        <div class="purchase-date">10.10.2023</div>
-                        <div class="purchase-name">Cyberpunk 2077</div>
-                        <div class="purchase-price">2 999 ₽</div>
-                    </div>
-                    <div class="purchase-item">
-                        <div class="purchase-date">05.10.2023</div>
-                        <div class="purchase-name">Игровая валюта (1000 монет)</div>
-                        <div class="purchase-price">499 ₽</div>
-                    </div>
-                </div>
+                <table class="pokupki-list">
+                    <tr class="pokupki-item">
+                        <td class="pokupki-date">20.10.2023</td>
+                        <td class="pokupki-name">The Last Adventure</td>
+                        <td class="pokupki-price">1 499 ₽</td>
+                    </tr>
+                    <tr class="pokupki-item">
+                        <td class="pokupki-date">15.10.2023</td>
+                        <td class="pokupki-name">Набор "Легендарное оружие"</td>
+                        <td class="pokupki-price">299 ₽</td>
+                    </tr>
+                    <tr class="pokupki-item">
+                        <td class="pokupki-date">10.10.2023</td>
+                        <td class="pokupki-name">Cyberpunk 2077</td>
+                        <td class="pokupki-price">2 999 ₽</td>
+                    </tr>
+                    <tr class="pokupki-item">
+                        <td class="pokupki-date">05.10.2023</td>
+                        <td class="pokupki-name">Игровая валюта (1000 монет)</td>
+                        <td class="pokupki-price">499 ₽</td>
+                    </tr>
+                </table>
             </section>
 
             <!-- Блок 3: Настройки профиля -->

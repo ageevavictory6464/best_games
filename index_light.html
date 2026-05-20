@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BestGames</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="./theme.js"></script>
+    <script src="./js/theme.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
 </head>
 
 <body class="light">
@@ -18,11 +19,22 @@
             </div>
             <!-- Навигация -->
             <nav class="nav">
-                <ul>
-                    <li><a href="#"><img class="icon-search" src="images/search-for-light.png" alt="search"></a></li>
-                    <li><a href="login.html">Войти</a></li>
-                    <li><a href="profile.html">Личный кабинет</a></li>
-                    <li><a href="catalog.html">Каталог игр</a></li>
+                <button class="m-menu">
+                    <img class="burger-menu" src="/images/mobile-menu.png" alt="mobile menu">
+                </button>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="#search"><img class="icon-search" src="images/search.svg" alt="search"></a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="login.html">Войти</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="profile.html">Личный кабинет</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="catalog.html">Каталог игр</a>
+                    </li>
                 </ul>
             </nav>
         </header>

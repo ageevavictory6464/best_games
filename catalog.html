@@ -1,178 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
     <script>
-        (function() {
+        (function () {
             const t = localStorage.getItem('user-theme') || 'dark';
             document.documentElement.setAttribute('data-theme', t);
         })();
     </script>
     <link rel="stylesheet" href="css/style.css">
-    <script src="./theme.js"></script>
+    <script src="./js/theme.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
 </head>
+
 <body>
     <div class="container">
-        <!-- шапка сайта -->
         <header class="header">
             <div class="logo">
                 <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
             </div>
-            <!-- навигация -->
+            <!-- Навигация -->
             <nav class="nav">
-                <ul>
-                    <li><a href="#"><img class="icon-search" src="images/search.svg" alt="search"></a></li>
-                    <li><a href="login.html">Войти</a></li>
-                    <li><a href="profile.html">Личный кабинет</a></li>
-                    <li><a href="catalog.html">Каталог игр</a></li>
+                <button class="m-menu">
+                    <img class="burger-menu" src="/images/mobile-menu.png" alt="mobile menu">
+                </button>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="#search"><img class="icon-search" src="images/search.svg" alt="search"></a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="login.html">Войти</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="profile.html">Личный кабинет</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="catalog.html">Каталог игр</a>
+                    </li>
                 </ul>
             </nav>
         </header>
-        <!-- каталог игр -->
+
+        <input type="radio" name="genre" id="genre-all" checked>
+        <input type="radio" name="genre" id="genre-shooter">
+        <input type="radio" name="genre" id="genre-strategy">
+        <input type="radio" name="genre" id="genre-action">
+        <input type="radio" name="genre" id="genre-adventure">
+        <input type="radio" name="genre" id="genre-horror">
+        <input type="radio" name="genre" id="genre-racing">
+
+        <input type="radio" name="country" id="country-all" checked>
+        <input type="radio" name="country" id="country-usa">
+        <input type="radio" name="country" id="country-poland">
+
+        <section class="filters">
+            <div class="ganre-filter">
+                <label for="genre-all" class="filter-btn">Все</label>
+                <label for="genre-shooter" class="filter-btn">Шутеры</label>
+                <label for="genre-strategy" class="filter-btn">Стратегии</label>
+                <label for="genre-action" class="filter-btn">Экшн</label>
+                <label for="genre-adventure" class="filter-btn">Приключения</label>
+                <!-- <label for="genre-horror" class="filter-btn">Хоррор</label>
+                <label for="genre-racing" class="filter-btn">Гонки</label> -->
+            </div>
+            <div class="country-filter">
+                <label for="country-all" class="filter-btn">Все страны</label>
+                <label for="country-usa" class="filter-btn">США</label>
+                <label for="country-poland" class="filter-btn">Польша</label>
+            </div>
+        </section>
+
         <section class="popular-games">
-                <h1>Каталог игр</h1>
-                <div class="slider-grid">
-                    <div class="game">
-                        <img src="images/popular-game5.jpg" alt="game">
-                        <h3>Cyberpunk 2077</h3>
-                        <p>Экшн, Приключения</p>
-                        <p>CD Projekt Red</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">2000p</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game2.jpg" alt="game">
-                        <h3>League of Legends</h3>
-                        <p>Стратегии</p>
-                        <p>Larian Studios</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">3699р</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game1.jpg" alt="game">
-                        <h3>Couner-Strike 2</h3>
-                        <p>Шутеры</p>
-                        <p>Valve</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game4.jpg" alt="game">
-                        <h3>Dota 2</h3>
-                        <p>Стратегии</p>
-                        <p>Valve</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game3.jpg " alt="game">
-                        <h3>VALORANT</h3>
-                        <p>Шутеры</p>
-                        <p>Riot Games</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game5.jpg" alt="game">
-                        <h3>Cyberpunk 2077</h3>
-                        <p>Экшн, Приключения</p>
-                        <p>CD Projekt Red</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">2000p</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game2.jpg" alt="game">
-                        <h3>League of Legends</h3>
-                        <p>Стратегии</p>
-                        <p>Larian Studios</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">3699р</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game1.jpg" alt="game">
-                        <h3>Couner-Strike 2</h3>
-                        <p>Шутеры</p>
-                        <p>Valve</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game4.jpg" alt="game">
-                        <h3>Dota 2</h3>
-                        <p>Стратегии</p>
-                        <p>Valve</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game3.jpg " alt="game">
-                        <h3>VALORANT</h3>
-                        <p>Шутеры</p>
-                        <p>Riot Games</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game5.jpg" alt="game">
-                        <h3>Cyberpunk 2077</h3>
-                        <p>Экшн, Приключения</p>
-                        <p>CD Projekt Red</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">2000p</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game2.jpg" alt="game">
-                        <h3>League of Legends</h3>
-                        <p>Стратегии</p>
-                        <p>Larian Studios</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">3699р</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game1.jpg" alt="game">
-                        <h3>Couner-Strike 2</h3>
-                        <p>Шутеры</p>
-                        <p>Valve</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game4.jpg" alt="game">
-                        <h3>Dota 2</h3>
-                        <p>Стратегии</p>
-                        <p>Valve</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
-                    <div class="game">
-                        <img src="images/popular-game3.jpg " alt="game">
-                        <h3>VALORANT</h3>
-                        <p>Шутеры</p>
-                        <p>Riot Games</p>
-                        <div class="stars">★★★★☆</div>
-                        <p class="price">FREE</p>
-                        <a href="#">Купить</a>
-                    </div>
+            <h2>Каталог игр</h2>
+            <div class="slider-grid">
+                <div class="game" data-genre="action adventure" data-country="poland">
+                    <img src="images/popular-game5.jpg" alt="game">
+                    <h3>Cyberpunk 2077</h3>
+                    <p>Экшн, Приключения</p>
+                    <p>CD Projekt Red</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">2000p</p>
+                    <a href="#">Купить</a>
                 </div>
-            </section>
-        </div>
-        <!-- подвал сайта -->
+                <div class="game" data-genre="strategy" data-country="usa">
+                    <img src="images/popular-game2.jpg" alt="game">
+                    <h3>League of Legends</h3>
+                    <p>Стратегии</p>
+                    <p>Larian Studios</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">3699р</p>
+                    <a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="shooter" data-country="usa">
+                    <img src="images/popular-game1.jpg" alt="game">
+                    <h3>Counter-Strike 2</h3>
+                    <p>Шутеры</p>
+                    <p>Valve</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">FREE</p>
+                    <a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="strategy" data-country="usa">
+                    <img src="images/popular-game4.jpg" alt="game">
+                    <h3>Dota 2</h3>
+                    <p>Стратегии</p>
+                    <p>Valve</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">FREE</p>
+                    <a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="shooter" data-country="usa">
+                    <img src="images/popular-game3.jpg" alt="game">
+                    <h3>VALORANT</h3>
+                    <p>Шутеры</p>
+                    <p>Riot Games</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">FREE</p>
+                    <a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="action adventure" data-country="poland">
+                    <img src="images/popular-game5.jpg" alt="game">
+                    <h3>Cyberpunk 2077</h3>
+                    <p>Экшн, Приключения</p>
+                    <p>CD Projekt Red</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">2000p</p><a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="strategy" data-country="usa">
+                    <img src="images/popular-game2.jpg" alt="game">
+                    <h3>League of Legends</h3>
+                    <p>Стратегии</p>
+                    <p>Larian Studios</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">3699р</p><a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="shooter" data-country="usa">
+                    <img src="images/popular-game1.jpg" alt="game">
+                    <h3>Counter-Strike 2</h3>
+                    <p>Шутеры</p>
+                    <p>Valve</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">FREE</p><a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="strategy" data-country="usa">
+                    <img src="images/popular-game4.jpg" alt="game">
+                    <h3>Dota 2</h3>
+                    <p>Стратегии</p>
+                    <p>Valve</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">FREE</p><a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="shooter" data-country="usa">
+                    <img src="images/popular-game3.jpg" alt="game">
+                    <h3>VALORANT</h3>
+                    <p>Шутеры</p>
+                    <p>Riot Games</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">FREE</p><a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="action adventure" data-country="poland">
+                    <img src="images/popular-game5.jpg" alt="game">
+                    <h3>Cyberpunk 2077</h3>
+                    <p>Экшн, Приключения</p>
+                    <p>CD Projekt Red</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">2000p</p><a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="strategy" data-country="usa">
+                    <img src="images/popular-game2.jpg" alt="game">
+                    <h3>League of Legends</h3>
+                    <p>Стратегии</p>
+                    <p>Larian Studios</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">3699р</p><a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="shooter" data-country="usa">
+                    <img src="images/popular-game1.jpg" alt="game">
+                    <h3>Counter-Strike 2</h3>
+                    <p>Шутеры</p>
+                    <p>Valve</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">FREE</p><a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="strategy" data-country="usa">
+                    <img src="images/popular-game4.jpg" alt="game">
+                    <h3>Dota 2</h3>
+                    <p>Стратегии</p>
+                    <p>Valve</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">FREE</p><a href="#">Купить</a>
+                </div>
+                <div class="game" data-genre="shooter" data-country="usa">
+                    <img src="images/popular-game3.jpg" alt="game">
+                    <h3>VALORANT</h3>
+                    <p>Шутеры</p>
+                    <p>Riot Games</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="price">FREE</p><a href="#">Купить</a>
+                </div>
+            </div>
+        </section>
+
         <footer class="footer">
             <div class="footer-content">
                 <div class="footer-section">
@@ -180,7 +211,6 @@
                     <p>Телефон: 8-800-999-55-99</p>
                     <p>Email: best@games.ru</p>
                 </div>
-
                 <div class="footer-section">
                     <h3>Информация</h3>
                     <p><a href="#">Клиентам</a></p>
@@ -188,7 +218,6 @@
                     <p><a href="#">О нас</a></p>
                     <p><a href="#">Контакты</a></p>
                 </div>
-
                 <div class="footer-section">
                     <h3>Навигация</h3>
                     <p><a href="index.html">Главная</a></p>
@@ -201,4 +230,5 @@
         </footer>
     </div>
 </body>
+
 </html>

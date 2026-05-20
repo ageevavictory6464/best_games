@@ -12,7 +12,8 @@
         })();
     </script>
     <link rel="stylesheet" href="css/style.css">
-    <script src="./theme.js"></script>
+    <script src="./js/theme.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
 </head>
 
 <body>
@@ -24,11 +25,22 @@
             </div>
             <!-- Навигация -->
             <nav class="nav">
-                <ul>
-                    <li><a href="#"><img class="icon-search" src="images/search.svg" alt="search"></a></li>
-                    <li><a href="login.html">Войти</a></li>
-                    <li><a href="profile.html">Личный кабинет</a></li>
-                    <li><a href="catalog.html">Каталог игр</a></li>
+                <button class="m-menu">
+                    <img class="burger-menu" src="/images/mobile-menu.png" alt="mobile menu">
+                </button>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="#search"><img class="icon-search" src="images/search.svg" alt="search"></a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="login.html">Войти</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="profile.html">Личный кабинет</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="catalog.html">Каталог игр</a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -40,12 +52,12 @@
                 <form class="auth-form">
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required>
                     </div>
 
                     <div class="form-group">
                         <label for="password">Пароль</label>
-                        <input type="password" id="password" name="password" required>
+                        <input type="password" id="password" name="password" placeholder="Пароль" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Войти</button>
